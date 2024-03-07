@@ -1,0 +1,3 @@
+export enum Tipo{
+    ENTRADA, PLATO_PRINCIPAL, POSTRE, OTRO
+}
