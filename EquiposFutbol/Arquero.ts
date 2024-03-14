@@ -4,11 +4,11 @@ class Arquero extends Jugador{
     cantAtajadas: number;
   
   
-    constructor(nombre:string, fechaNac: Date, provincia: string, histEquipos: Set<Equipo>, numCam:number, porcentajeAtajadas: number, cantGolesRecibidos: number, cantAtajadas: number){
-        super(nombre,fechaNac,provincia,histEquipos,numCam)
-        this.porcentajeAtajadas = porcentajeAtajadas;
+    constructor(nombre:string, fechaNac: Date, provincia: string, histEquipos: Set<Equipo>, numCam:number, cantGolesRecibidos: number, cantAtajadas: number){
+        super(nombre,fechaNac,provincia,histEquipos,numCam)    
         this.cantGolesRecibidos = cantGolesRecibidos;
         this.cantAtajadas = cantAtajadas;
+        this.porcentajeAtajadas = cantAtajadas*100/(cantAtajadas+cantGolesRecibidos)
     }
   
   

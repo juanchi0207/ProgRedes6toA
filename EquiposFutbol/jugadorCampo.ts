@@ -6,13 +6,13 @@ class JugadorCampo extends Jugador{
     posicion: Posiciones;
   
   
-    constructor(nombre: string, fechaDeNacimiento: Date, posicion: Posiciones, provincia: string, historialDeEquipos: Set<Equipo>, porcentajeGoles: number, cantidadAsists: number, cantTiros: number, numCamiseta: number, cantGoles: number){
+    constructor(nombre: string, fechaDeNacimiento: Date, posicion: Posiciones, provincia: string, historialDeEquipos: Set<Equipo>, cantidadAsists: number, cantTiros: number, numCamiseta: number, cantGoles: number){
       super(nombre, fechaDeNacimiento, provincia, historialDeEquipos, numCamiseta);
-      this.porcentajeGoles = porcentajeGoles;
       this.cantidadAsists = cantidadAsists;
       this.cantTiros = cantTiros;
       this.posicion = posicion;
       this.cantidadGoles=cantGoles
+      this.porcentajeGoles = (cantGoles/100)*cantTiros
     }
   
   
