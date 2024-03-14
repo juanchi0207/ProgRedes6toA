@@ -1,0 +1,3 @@
+enum Posiciones{
+    DEFENSOR, MEDIOCAMPISTA, DELANTERO
+}
