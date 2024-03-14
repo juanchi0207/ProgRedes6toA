@@ -1,15 +1,18 @@
 import { Plato } from "./Plato";
 import { Chef } from "./Chef";
+import { Mesa } from "./Mesa";
 export class Restaurante {
 
-    nombre: string;
-    menu: Set<Plato>;
-    chefs: Set<Chef>;
+    nombre: string
+    menu: Set<Plato>
+    chefs: Set<Chef>
+    mesas: Set<Mesa>
 
-    constructor(nombre: string, menu: Set<Plato>, chefs: Set<Chef>){
+    constructor(nombre: string, menu: Set<Plato>, chefs: Set<Chef>, mesas: Set<Mesa>){
         this.nombre = nombre
         this.menu = menu;
         this.chefs = chefs;
+        this.mesas = mesas
     }
 
     getNombre(): string{
@@ -36,6 +39,16 @@ export class Restaurante {
         this.chefs = chefs;
     }
     
+
+    getMesa(): Set<Mesa>{
+        return this.mesas
+    } 
+
+    setMesa(mesas: Set<Mesa>): void{
+        this.mesas = mesas;
+    } 
+
+
     
     agregarPlato(plato: Plato): boolean{
         if(this.verificarChef(plato.getChef()) && this.verificarPlato(plato)){
@@ -72,4 +85,12 @@ export class Restaurante {
         return false;
     }
 
+
+    mesasOcupadas(){
+        for (let mesa of this.mesas){
+            if(!mesa.disponible){
+                console.log ("La mesa " + mesa.getNumero + " esta ocupada")
+            }
+        }
+    }
 }
