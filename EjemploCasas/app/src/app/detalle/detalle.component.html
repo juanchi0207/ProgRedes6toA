@@ -1,0 +1,29 @@
+<article>
+    <img class="listado-foto" [src]="casa?.foto" />
+    <section class="listing-description">
+      <h2 class="listado-heading">{{casa?.nombre}}</h2>
+      <p class="listado-ubicacion">{{casa?.ciudad}}, {{casa?.estado}}</p>
+    </section>
+    <section class="listado-features">
+      <h2 class="section-heading">Sobre esta casa</h2>
+      <ul>
+        <li>Unidades disponibles: {{casa?.unidadesDisponibles}}</li>
+        <li>Tiene wifi: {{casa?.wifi}}</li>
+        <li>Tiene lavadero: {{casa?.lavadero}}</li>
+      </ul>
+    </section>
+    <section class="listado-apply">
+      <h2 class="section-heading">Aplicar para esta casa</h2>
+      <form [formGroup]="applyForm" (submit)="submitApplication()">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" formControlName="nombre">
+
+        <label for="apellido">Apellido</label>
+        <input id="apellido" type="text" formControlName="apellido">
+
+        <label for="email">Correo electrónico</label>
+        <input id="email" type="email" formControlName="email">
+        <button type="submit" class="primary" onclick="submitApplication()">Aplicar ahora</button>
+      </form>
+    </section>
+  </article>

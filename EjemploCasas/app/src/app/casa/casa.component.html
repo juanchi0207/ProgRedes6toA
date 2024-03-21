@@ -1,0 +1,6 @@
+<section class="listado">
+    <img class="listado-foto" [src]="casa.foto">
+    <h2 class="listado-heading">{{ casa.nombre }}</h2>
+    <p class="listado-ubicacion">{{ casa.ciudad}}, {{casa.estado }}</p>
+    <a [routerLink]="['/detalle', casa.id]">Ver más</a>
+  </section>

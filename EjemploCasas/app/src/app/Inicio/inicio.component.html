@@ -1,0 +1,10 @@
+<section>
+    <form (submit)="onSubmit($event, filtro.value)">
+      <input type="text" placeholder="Filtrar por ciudad" #filtro>
+      <button class="primary" type="button" (click)="filtrarResultados(filtro.value)">Buscar</button>
+    </form>
+  </section>
+  <section class="resultados">
+    <app-casa *ngFor="let casa of resultados" [casa]="casa">
+  </app-casa>
+  </section>

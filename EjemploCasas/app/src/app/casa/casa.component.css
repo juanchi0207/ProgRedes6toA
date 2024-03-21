@@ -1,0 +1,31 @@
+.listado {
+  background: var(--accent-color);
+  border-radius: 30px;
+  padding-bottom: 30px;
+}
+.listado-heading {
+  color: var(--primary-color);
+  padding: 10px 20px 0 20px;
+}
+.listado-foto {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px 30px 0 0;
+}
+.listado-ubicacion {
+  padding: 10px 20px 20px 20px;
+}
+.listado-ubicacion::before {
+  content: url("/assets/location-pin.svg") / "";
+}
+
+section.listado a {
+  padding-left: 20px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+section.listado a::after {
+  content: "\203A";
+  margin-left: 5px;
+}
