@@ -15,6 +15,12 @@ async function getAll(_: IReq, res: IRes) {
   return res.status(HttpStatusCodes.OK).json({ users });
 }
 
+async function getOne(req: IReq, res: IRes) {
+  const id = +req.params.id;
+  const users = await UserService.getOne(id);
+  return res.status(HttpStatusCodes.OK).json({ users });
+}
+
 /**
  * Add one user.
  */
@@ -28,6 +34,7 @@ async function add(req: IReq<{user: IUser}>, res: IRes) {
  * Update one user.
  */
 async function update(req: IReq<{user: IUser}>, res: IRes) {
+  const id = +req.params
   const { user } = req.body;
   await UserService.updateOne(user);
   return res.status(HttpStatusCodes.OK).end();
@@ -46,6 +53,7 @@ async function delete_(req: IReq, res: IRes) {
 // **** Export default **** //
 
 export default {
+  getOne,
   getAll,
   add,
   update,

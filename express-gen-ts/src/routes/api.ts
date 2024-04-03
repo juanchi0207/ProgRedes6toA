@@ -22,6 +22,11 @@ userRouter.get(
   UserRoutes.getAll,
 );
 
+userRouter.get(
+  '/users/:id',
+  UserRoutes.getOne,
+);
+
 // Add one user
 userRouter.post(
   Paths.Users.Add,

@@ -4,12 +4,12 @@
 
 
 export default {
-  Base: '/api',
+  Base: '/',
   Users: {
-    Base: '/users',
-    Get: '/',
+    Base: '/',
+    Get: '/users',
     Add: '/',
-    Update: '/',
-    Delete: '/:id',
+    Update: '/users/:id',
+    Delete: '/users/:id',
   },
 } as const;

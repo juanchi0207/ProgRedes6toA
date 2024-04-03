@@ -40,6 +40,19 @@ async function updateOne(user: IUser): Promise<void> {
   return UserRepo.update(user);
 }
 
+// Get one
+async function getOne(id: number): Promise<IUser | null> {
+  const persists = await UserRepo.persists(id);
+  if (!persists) {
+    throw new RouteError(
+      HttpStatusCodes.NOT_FOUND,
+      USER_NOT_FOUND_ERR,
+    );
+  }
+  
+  return UserRepo.getOne(id);
+}
+
 /**
  * Delete a user by their id.
  */
@@ -59,6 +72,7 @@ async function _delete(id: number): Promise<void> {
 // **** Export default **** //
 
 export default {
+  getOne,
   getAll,
   addOne,
   updateOne,

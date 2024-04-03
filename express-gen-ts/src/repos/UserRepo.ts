@@ -8,10 +8,10 @@ import orm from './MockOrm';
 /**
  * Get one user.
  */
-async function getOne(email: string): Promise<IUser | null> {
+async function getOne(id: number): Promise<IUser | null> {
   const db = await orm.openDb();
   for (const user of db.users) {
-    if (user.email === email) {
+    if (user.id === id) {
       return user;
     }
   }
